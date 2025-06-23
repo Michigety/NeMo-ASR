@@ -1,0 +1,23 @@
+defaults:
+  - model: model
+  - model/train_ds: dataset
+  - model/validation_ds: dataset
+  - model/test_ds: dataset
+  - model/tokenizer: tokenizer
+  - model/preprocessor: preprocessor
+  - model/spec_augment: spec_augment
+  - model/encoder: encoder
+  - model/decoder: decoder
+  - model/joint: joint
+  - model/decoding: decoding
+  - model/aux_ctc: aux_ctc
+  - model/interctc: interctc
+  - model/loss: loss
+  - model/optim: optim
+  - model/optim/sched: scheduler
+  - trainer: trainer
+  - exp_manager: exp_manager
+
+
+
+

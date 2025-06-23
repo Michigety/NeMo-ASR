@@ -1,0 +1,43 @@
+
+sample_rate: ${model.sample_rate}
+batch_size: 1
+shuffle: true
+num_workers: 2
+max_duration: 30.0
+min_duration: 0.5
+pin_memory: true # default is true?
+use_start_end_token: false
+
+shard_manifests: false # default is false
+
+# # If shard_manifests is true, you can choose one of the following two formats:
+# # 1. sharded manifests with special tokens _OP_ and _CL_
+# manifest_filepath: /path/to/shard__OP_1..4_CL_.json # is equal to /path/to/shard_{1..4}.json
+
+# # 2. a list of manifest files
+# # It is same as the above, /path/to/shard__OP_1..4_CL_.json and /path/to/shard_{1..4}.json
+# manifest_filepath:
+#   - /path/to/shard_1.json
+#   - /path/to/shard_2.json
+#   - /path/to/shard_3.json
+#   - /path/to/shard_4.json
+
+# If shard_manifests is false, you can only use a single manifest file.
+manifest_filepath: /path/to/train.json
+
+is_tarred: false # default is false
+
+# # If is_tarred is true, you should provide a list of tarred audio filepaths.
+# # the format is same as the manifest_filepath when shard_manifests is true.
+# tarred_audio_filepaths:
+#   - /path/to/tarred_audio_1.tar
+#   - /path/to/tarred_audio_2.tar
+
+# If is_tarred is true,
+shuffle_n: 2048 # default is 0
+
+# If is_tarred is false, tarred_audio_filepaths is null.
+tarred_audio_filepaths: null
+
+bucketing_strategy: "synced_randomized"
+bucketing_batch_size: null

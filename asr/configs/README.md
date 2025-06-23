@@ -1,0 +1,31 @@
+```yaml
+model:
+  model_defaults:
+  train_ds:
+  validation_ds:
+  test_ds:
+  tokenizer:
+  preprocessor:
+  spec_augment:
+  encoder:
+  decoder:
+    prednet:
+  joint:
+    jointnet:
+  decoding:
+    greedy:
+    beam:
+  aux_ctc:
+    decoder:
+    decoding:
+  interctc:
+  loss:
+    tdt_kwargs:
+  optim:
+    sched:
+trainer:
+  strategy:
+exp_manager:
+  checkpoint_callback_params:
+  wandb_logger_kwargs:
+```

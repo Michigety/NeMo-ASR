@@ -1,0 +1,2 @@
+dir: /path/to/tokenizer
+type: bpe
