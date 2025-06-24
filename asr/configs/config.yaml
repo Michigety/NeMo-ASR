@@ -4,12 +4,12 @@ defaults:
   - model/validation_ds: dataset
   - model/test_ds: dataset
   - model/tokenizer: tokenizer
-  - model/preprocessor: preprocessor
-  - model/spec_augment: spec_augment
-  - model/encoder: encoder
-  - model/decoder: decoder
-  - model/joint: joint
-  - model/decoding: decoding
+  - model/preprocessor: AudioToMelSpectrogramPreprocessor
+  - model/spec_augment: SpectrogramAugmentation
+  - model/encoder: ConformerEncoder
+  - model/decoder: RNNTDecoder
+  - model/joint: RNNTJoint
+  - model/decoding: greedy_batch
   - model/aux_ctc: aux_ctc
   - model/interctc: interctc
   - model/loss: loss

@@ -1,0 +1,13 @@
+strategy: "beam" # can be greedy, greedy_batch, beam, tsd, alsd.
+
+# greedy strategy config
+greedy:
+  max_symbols: 10
+
+# beam strategy config
+beam:
+  beam_size: 2
+  return_best_hypothesis: False
+  score_norm: true
+  tsd_max_sym_exp: 50  # for Time Synchronous Decoding
+  alsd_max_target_len: 2.0  # for Alignment-Length Synchronous Decoding

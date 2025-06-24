@@ -1,0 +1,14 @@
+
+name: adamw
+lr: 1.0
+# optimizer arguments
+betas: [0.9, 0.98]
+weight_decay: 1e-3
+
+# scheduler setup
+sched:
+  name: NoamAnnealing
+  d_model: ${model.encoder.d_model}
+  warmup_steps: 50000
+  warmup_ratio: null
+  min_lr: 1e-8
