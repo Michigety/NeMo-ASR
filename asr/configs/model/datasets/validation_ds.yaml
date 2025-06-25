@@ -1,4 +1,4 @@
-
+# for more details, see: train_ds.yaml
 sample_rate: ${model.sample_rate}
 batch_size: 1
 shuffle: true
@@ -9,8 +9,9 @@ pin_memory: true
 use_start_end_token: false
 
 shard_manifests: false
-manifest_filepath: /path/to/test.json
+manifest_filepath: /path/to/val.json
 
 is_tarred: false
 shuffle_n: 2048
 tarred_audio_filepaths: null
+

@@ -1,4 +1,14 @@
-# default == warprnnt_numba
+# choose one of the following loss functions:
+# - "default": this is the same as warprnnt_numba.
+# - "warprnnt":
+# - "warprnnt_numba": (default)
+# - "pytorch":
+# - "multiblank_rnnt":
+# - "multiblank_rnnt_pytorch":
+# - "graph_w_transducer":
+# - "graph_rnnt":
+# - "tdt":
+# - "tdt_pytorch":
 loss_name: "default"
 
 warprnnt_numba_kwargs:

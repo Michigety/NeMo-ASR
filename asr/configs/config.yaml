@@ -1,8 +1,8 @@
 defaults:
-  - model: model
-  - model/train_ds: dataset
-  - model/validation_ds: dataset
-  - model/test_ds: dataset
+  - model: EncDecRNNTBPEModel_with_tdt
+  - model/datasets@model.train_ds: train_ds
+  - model/datasets@model.validation_ds: validation_ds
+  - model/datasets@model.test_ds: test_ds
   - model/tokenizer: tokenizer
   - model/preprocessor: AudioToMelSpectrogramPreprocessor
   - model/spec_augment: SpectrogramAugmentation
@@ -12,12 +12,9 @@ defaults:
   - model/decoding: greedy_batch
   - model/aux_ctc: aux_ctc
   - model/interctc: interctc
-  - model/loss: loss
-  - model/optim: optim
-  - model/optim/sched: scheduler
+  - model/loss: default
+  - model/optim: Adamw-NoamAnnealing
   - trainer: trainer
   - exp_manager: exp_manager
 
-
-
-
+name: "michigety-asr-ko"

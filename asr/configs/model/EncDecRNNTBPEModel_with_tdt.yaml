@@ -1,0 +1,23 @@
+sample_rate: 16000
+compute_eval_loss: false 
+log_prediction: true
+skip_nan_grad: false
+
+# model.rnnt_reduction and model.loss.reduction are the same thing. (as far as I know)
+# But when using EncDecRNNTModel(or EncDecRNNTBPEModel), 
+# you should use model.loss.reduction instead of model.rnnt_reduction.
+# choose one of the following:
+# - None: 
+# - "mean_batch": (default)
+# - "mean_volume": 
+# - "mean": 
+# - "sum": 
+rnnt_reduction: "mean_volume" 
+
+model_defaults:
+  enc_hidden: ${model.encoder.d_model}
+  pred_hidden: 640
+  joint_hidden: 640
+
+  tdt_durations: [0, 1, 2, 3, 4]
+  num_tdt_durations: 5
