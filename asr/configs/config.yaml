@@ -1,5 +1,5 @@
 defaults:
-  - model: EncDecRNNTBPEModel_with_tdt
+  - model: EncDecRNNTBPEModel
   - model/datasets@model.train_ds: train_ds
   - model/datasets@model.validation_ds: validation_ds
   - model/datasets@model.test_ds: test_ds
@@ -10,11 +10,28 @@ defaults:
   - model/decoder: RNNTDecoder
   - model/joint: RNNTJoint
   - model/decoding: greedy_batch
-  - model/aux_ctc: aux_ctc
-  - model/interctc: interctc
-  - model/loss: default
+  #- model/aux_ctc: aux_ctc
+  #- model/interctc: interctc
+  - model/loss: tdt
   - model/optim: Adamw-NoamAnnealing
   - trainer: trainer
   - exp_manager: exp_manager
+  - _self_
 
-name: "michigety-asr-ko"
+name: "michigety-asr-ko-FastConformer-TDT"
+# model size configurations
+model:
+  model_defaults:
+    enc_hidden: ${model.encoder.d_model}
+    pred_hidden: 640
+    joint_hidden: 640
+
+  encoder:
+    d_model: 512
+    n_heads: 8
+    n_layers: 17
+    xscaling: true
+
+  decoder:
+    prednet:
+      pred_rnnt_layers: 1

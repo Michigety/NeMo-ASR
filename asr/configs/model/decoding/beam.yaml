@@ -1,3 +1,4 @@
+# Not Recommended when training a model.
 strategy: "beam" # can be greedy, greedy_batch, beam, tsd, alsd.
 
 # greedy strategy config

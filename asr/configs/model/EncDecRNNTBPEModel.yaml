@@ -19,5 +19,6 @@ model_defaults:
   pred_hidden: 640
   joint_hidden: 640
 
+  # tdt only
   tdt_durations: [0, 1, 2, 3, 4]
   num_tdt_durations: 5

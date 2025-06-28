@@ -1,2 +1,16 @@
 dir: /path/to/tokenizer
+
+# Tokenizer type is one of the following:
+# - "bpe": Google SentencePiece BPE tokenizer
+# - "wpe": WordPiece tokenizer
+# - "agg": Aggregated BPE tokenizer (for multilingual ASR)
 type: bpe
+
+# "langs" is only applicable for "agg" tokenizers.
+# langs:
+#   ko:
+#     dir: /path/to/ko/tokenizer
+#     type: bpe | wpe # cannot be "agg"
+#   en:
+#     dir: /path/to/en/tokenizer
+#     type: bpe | wpe  # cannot be "agg"
